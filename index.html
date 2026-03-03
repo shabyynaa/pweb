@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Shabrina Sarayati</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --pink: #f472b6;
+    --dark-pink: #ec4899;
+    --black: #1a1a1a;
+    --light-pink: #fce7f3;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px 10px;
+  }
+
+  .cv {
+    width: 794px;
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+
+  .header {
+    background: var(--black);
+    padding: 30px 35px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+  }
+
+  .header-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #555;
+    border: 4px solid var(--pink);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #ccc;
+    overflow: hidden;
+  }
+
+  .header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+}
+  .header-info { flex: 1; }
+
+  .header-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--pink);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .header-title {
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 300;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  .header-contacts {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--white);
+    font-size: 11px;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+
+  .contact-item svg { width: 12px; height: 12px; fill: var(--pink); }
+
+  .body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0;
+  }
+
+  .sidebar {
+    background: var(--light-pink);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sidebar-title::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--pink);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .sidebar-text {
+    font-size: 11px;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  .lang-level {
+    color: var(--dark-pink);
+    font-weight: 500;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin: 3px 3px 3px 0;
+    font-weight: 500;
+  }
+
+  .interest-item {
+    font-size: 11px;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .interest-label {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 11px;
+  }
+
+  /* RIGHT CONTENT */
+  .main {
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    margin-top: 20px; 
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 1px;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .exp-date {
+    font-size: 10px;
+    color: #888;
+    font-weight: 500;
+    line-height: 1.6;
+    padding-top: 2px;
+  }
+
+  .exp-company {
+    font-size: 10px;
+    color: var(--dark-pink);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .exp-role {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-bullets li {
+    font-size: 10.5px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+
+  .exp-bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+    font-weight: 700;
+  }
+
+  .formation-block {
+    background: var(--black);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .formation-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .formation-item {
+    display: flex;
+    gap: 14px;
+    font-size: 10.5px;
+    color: #ccc;
+    margin-bottom: 7px;
+    align-items: flex-start;
+  }
+
+  .formation-year {
+    color: var(--pink);
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 70px;
+  }
+
+  .project-title {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #222;
+  }
+  
+  .interest-list {
+    margin-left: 16px;
+    font-size: 11px;      
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .interest-list li {
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="cv">
+
+<!-- headernya -->
+<div class="header">
+  <div class="header-photo">
+    <img src="Screenshot 2026-02-25 200402.png" alt="Foto Diri">
+  </div>
+    <div class="header-info">
+      <div class="header-name">Shabrina Sarayati</div>
+      <div class="header-title">Artificial Intelligence Engineering Undergraduate Student</div>
+      <div class="header-contacts">
+        <div class="contact-item">shabrinasarayati@gmail.com</div>
+        <div class="contact-item">https://github.com/shabyynaa</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- Sidebarr -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Tentang Saya</div>
+        <div class="sidebar-text">
+          Seorang mahasiswa Rekayasa Kecerdasan Artifisial
+dengan minat pada pengolahan data dan machine learning. Terbiasa 
+bekerja secara teliti dan bertanggung jawab melalui pengalaman dalam pengelolaan
+data, administrasi, serta pengembangan projek berbasis machine learning.
+Saya ingin terus mengembangkan kemampuan saya di bidang AI dan data agar dapat
+berkontribusi dalam membebuat solusi yang bermanfaat.
+        </div>
+      </div>
+
+    <div class="sidebar-section">
+  <div class="sidebar-title">Pendidikan</div>
+
+  <div class="sidebar-text">
+    <strong>SMAN 102 Jakarta Timur</strong><br>
+    Ilmu Pengetahuan Alam<br>
+    2021 - 2024
+    <br><br>
+    <strong>Institut Teknologi Sepuluh Nopember</strong><br>
+    Rekayasa Kecerdasan Artifisial<br>
+    2024 - Sekarang
+  </div>
+</div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Minat</div>
+
+    <ul class="interest-list">
+      <li>Data Processing and Machine Learning</li>
+      <li>Data Management and Information Organization</li>
+      <li>Data Analysis and Dataset Handling</li>
+    </ul>
+  </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <div>
+        <div class="section-header">
+          <div class="section-title">Pengalaman Kepanitiaan</div>
+        </div>
+
+        <div class="exp-item">
+          <div>
+            <div class="exp-company">Ini Lho ITS Forda Jakarta</div>
+            <div class="exp-date">Januari 2024<br>Februari 2024</div>
+          </div>
+          <div>
+            <div class="exp-role">Staff Data Management</div>
+            <ul class="exp-bullets">
+              <li>Berkontribusi aktif selama ±1 bulan dalam kepanitiaan untuk menyukseskan acara promosi kampus.
+</li>
+              <li>Membuat berita acara dan notulen sesi tanya jawab selama rangkaian kegiatan berlangsung.</li>
+              <li>Berkesempatan menjadi pembicara dalam salah satu sesi untuk mempresentasikan materi promosi kampus ITS di hadapan peserta.</li>
+              <li>Bertugas di meja registrasi pada acara Welcome Sepuluh Nopember, mengarahkan peserta try out untuk mengisi absensi, mencatat
+asal sekolah, dan memverifikasi kartu identitas peserta</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div>
+            <div class="exp-company">Panitia KPU/PPU HMTC</div>
+            <div class="exp-date">Desember 2025<br>Januari 2026</div>
+          </div>
+          <div>
+            <div class="exp-role">Sekretaris</div>
+            <ul class="exp-bullets">
+              <li>Bertanggung jawab atas pengelolaan administrasi kegiatan pemilu, termasuk penyusunan surat resmi dan dokumen pendukung</li>
+              <li>Menyusun dan mendistribusikan surat undangan dan pemberitahuan</li>
+              <li>Melakukan rekapitulasi dan dokumentasi hasil penghitungan suara secara terstruktur.</li>
+              <li>Memastikan seluruh dokumen terdokumentasi dengan rapi dan dapat diakses saat diperlukan.</li>
+            </ul>
+          </div>
+        </div>
+    
+      <!-- PROJECT / APLIKASI -->
+<div>
+  <div class="section-header">
+    <div class="section-title">Final Project</div>
+  </div>
+
+<div class="final-project">
+  <p class="project-title">Machine Learning Prediction of Valorant Match Outcomes</p>
+  <ul class="exp-bullets">
+    <li>Mengumpulkan dan membersihkan data statistik pertandingan.</li>
+    <li>Mengimplementasikan model machine learning untuk prediksi.</li>
+    <li>Melakukan pengujian dan evaluasi performa model.</li>
+    <li>Menganalisis hasil prediksi dan akurasi model.</li>
+  </ul>
+</div>
+
+<!-- Rrencana fp-->
+<div>
+  <div class="section-header">
+    <div class="section-title">Rencana Final Project</div>
+  </div>
+
+  <p style="font-size: 11px; color: #555; line-height: 1.6;">
+    Saya berencana membuat aplikasi web yang membantu pengguna dalam mengelola data
+    atau aktivitas secara lebih efisien, dengan fokus pada tampilan yang sederhana
+    dan mudah digunakan.
+  </p>
+</div>
+
+<!-- Pekerjaan Impian -->
+<div>
+  <div class="section-header">
+    <div class="section-title">Pekerjaan Impian</div>
+  </div>
+
+  <p style="font-size: 11px; color: #555; line-height: 1.6;">
+    Saya bercita-cita menjadi Data Analyst karena memiliki 
+    ketertarikan dalam pengolahan dan analisis data, serta 
+    ingin memanfaatkan data untuk menghasilkan insight yang bermanfaat.
+  </p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
